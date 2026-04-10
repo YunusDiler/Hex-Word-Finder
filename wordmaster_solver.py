@@ -745,7 +745,7 @@ def main():
     elif sum(1 for c in letters.values() if c != '?') < len(hexes):
         first_swipe_delay = 1.5
     # Harf girisinin yapildigi durumlarda kullaniciya hazirlik suresi ver
-    if first_swipe_delay > 0 and not args.dry_run:
+    if first_swipe_delay > 0 and not args.dry_run or args.all or args.all_reverse:
         try:
             input(f'\n  Swipe baslamak uzere. Telefona gec ve Enter a bas... ')
         except (EOFError, KeyboardInterrupt):
